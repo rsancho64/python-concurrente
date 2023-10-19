@@ -1,3 +1,4 @@
+import time
 import logging
 import multiprocessing
 
@@ -13,10 +14,15 @@ class PSimple(multiprocessing.Process):
         multiprocessing.Process.__init__(self, daemon=daemon, name=name)
 
     def run(self):
-        logging.info('este mensaje lo dice un proceso hijo')
+        time.sleep(3)
+        logging.info('este mensaje de despedida lo da un hijo')
 
 
 if __name__ == '__main__':
 
+    logging.info('COMIENZO...')
+
     Ps = PSimple(False, 'p-easy')
     Ps.start()
+
+    logging.info('...FIN')
