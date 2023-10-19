@@ -1,7 +1,9 @@
 import logging
 from concurrent.futures import ProcessPoolExecutor
 
-logging.basicConfig(level=logging.DEBUG, format='%(processName)s %(message)s')
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='PID: %(process)s ~ %(processName)s: %(message)s')
 
 def is_even(number):
     return number % 2 == 0
